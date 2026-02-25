@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Гурт "Грим та Грім"</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="nav-logo">G&G</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" onclick="closeMenu()">Про гурт</a></li>
+          <li><a href="#concerts" onclick="closeMenu()">Концерти</a></li>
+          <li><a href="#gallery" onclick="closeMenu()">Галерея</a></li>
+          <li><a href="#contact" onclick="closeMenu()">Контакт</a></li>
+        </ul>
+        <button class="burger" id="burger-btn" aria-label="Меню" onclick="toggleMenu()">
+          <svg width="24" height="24" class="icon-burger">
+            <use href="./img/svg/burger.svg"></use>
+          </svg>
+          <svg width="24" height="24" class="icon-close">
+            <use href="./img/svg/close.svg"></use>
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <h1>Гурт «Грим та Грім»</h1>
+          <p>Справжній український рок, який гуркоче в серці.</p>
+          <p>
+            «Грим та Грім» — це поєднання <span class="hero-highlight">потужних</span>,
+            гітарних рифів, чесних текстів і вибухової енергії сцени. Ми граємо для тих, хто цінує живий звук, свободу та силу музики.
+          </p>
+          <p>
+            <span class="hero-highlight">Наші концерти</span> - це завжди контакт із залом, драйв і емоції. Приєднуйся до нас на найближчіх виступах і відчуй цей саунд наживо!
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="openPopup('tickets')">Замовити квиток</button>
+            <button class="btn btn-secondary" onclick="scrollToSection('#concerts')">
+              Найближчі концерти
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="concerts">
+        <h2 class="section-title">Найближчі концерти</h2>
+        <div class="concerts-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Місто / Заклад</th>
+                <th>К-сть місць</th>
+                <th>Дата і час</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Київ — Decked-B.Pub</td>
+                <td>248</td>
+                <td>20.10.2025, 19:00</td>
+                <td>
+                  <button class="ticket-mobile"
+                  onclick="openTicketPopup('Київ — Decked-B.Pub', '20.10.2025, 19:00')">
+                    <svg width="24" height="24">
+                      <use href="./img/svg/basket.svg"></use>
+                    </svg>
+                  </button>
+                  <button
+                    class="ticket-btn"
+                    onclick="openTicketPopup('Київ — Decked-B.Pub', '20.10.2025, 19:00')"
+                  >
+                    Замовити квиток
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Львів — YYYRepublic</td>
+                <td>410</td>
+                <td>01.11.2025, 20:00</td>
+                <td>
+                  <button class="ticket-mobile"
+                  onclick="openTicketPopup('Львів — YYYRepublic', '01.11.2025, 20:00')">
+                    <svg width="24" height="24">
+                      <use href="./img/svg/basket.svg"></use>
+                    </svg>
+                  </button>
+                  <button
+                    class="ticket-btn"
+                    onclick="openTicketPopup('Львів — YYYRepublic', '01.11.2025, 20:00')"
+                  >
+                    Замовити квиток
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Одеса — Земля-лагур</td>
+                <td>700</td>
+                <td>03.11.2025, 20:30</td>
+                <td>
+                  <button
+                    class="ticket-mobile"
+                    onclick="openTicketPopup('Одеса — Земля-лагур', '03.11.2025, 20:30')"
+                  >
+                    <svg width="24" height="24">
+                      <use href="./img/svg/basket.svg"></use>
+                    </svg>
+                  </button>
+                  <button
+                    class="ticket-btn"
+                    onclick="openTicketPopup('Одеса — Земля-лагур', '03.11.2025, 20:30')"
+                  >
+                    Замовити квиток
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Харків — A-ItZero2</td>
+                <td>619</td>
+                <td>18.11.2025, 19:00</td>
+                <td>
+                  <button class="ticket-mobile"
+                  onclick="openTicketPopup('Харків — A-ItZero2', '18.11.2025, 19:00')">
+                    <svg width="24" height="24">
+                      <use href="./img/svg/basket.svg"></use>
+                    </svg>
+                  </button>
+                  <button
+                    class="ticket-btn"
+                    onclick="openTicketPopup('Харків — A-ItZero2', '18.11.2025, 19:00')"
+                  >
+                    Замовити квиток
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="members">
+        <h2 class="section-title">Учасники гурту</h2>
+        <div class="members-grid" id="team-container">
+          <div
+            class="member-card"
+            data-name="Максим"
+            data-role="Гітара"
+            data-bio="Засновник гурту та головний гітарист. Грає з 15 років, надихається класичним роком та українською поетичною традицією."
+          >
+            <img
+              class="member-img"
+              src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&auto=format&fit=crop&q=60"
+              alt="Максим"
+              loading="lazy"
+            />
+            <div class="member-info">
+              <div class="member-name">Максим</div>
+              <div class="member-role">Гітара</div>
+            </div>
+          </div>
+          <div
+            class="member-card"
+            data-name="Олена"
+            data-role="Вокал"
+            data-bio="Голос гурту. Її сильний і пристрасний вокал захоплює кожного слухача. Виступає на сцені понад 8 років."
+          >
+            <img
+              class="member-img"
+              src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=400&auto=format&fit=crop&q=60"
+              alt="Олена"
+              loading="lazy"
+            />
+            <div class="member-info">
+              <div class="member-name">Олена</div>
+              <div class="member-role">Вокал</div>
+            </div>
+          </div>
+          <div
+            class="member-card"
+            data-name="Гриць"
+            data-role="Барабани"
+            data-bio="Ритмічна основа гурту. Грає у важкому стилі, але завжди в темпі. Фанат прогресивного року та металу."
+          >
+            <img
+              class="member-img"
+              src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&auto=format&fit=crop&q=60"
+              alt="Гриць"
+              loading="lazy"
+            />
+            <div class="member-info">
+              <div class="member-name">Гриць</div>
+              <div class="member-role">Барабани</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" onclick="openImgPopup(this)">
+            <img src="https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Концерт 2" loading="lazy" />
+
+          </div>
+          <div class="gallery-item" onclick="openImgPopup(this)">
+            <img
+              src="https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=400&auto=format&fit=crop&q=60"
+              alt="Концерт 2"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item" onclick="openImgPopup(this)">
+            <img
+              src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&auto=format&fit=crop&q=60"
+              alt="Концерт 3"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item" onclick="openImgPopup(this)">
+            <img
+              src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=400&auto=format&fit=crop&q=60"
+              alt="Концерт 4"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item" onclick="openImgPopup(this)">
+            <img
+              src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400&auto=format&fit=crop&q=60"
+              alt="Концерт 5"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item" onclick="openImgPopup(this)">
+            <img
+              src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=400&auto=format&fit=crop&q=60"
+              alt="Концерт 6"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="background: var(--bg2)">
+        <h2 class="section-title">Наша історія</h2>
+        <div class="history-inner">
+          <div class="history-text">
+            <p>
+              «Грим та Грім» народився у Харкові в боротьбі зі стереотипами та стандартами музики,
+              що підкорювала серця. Ми почали свій шлях з невеликого гаражу в центрі Харкова, де
+              кожен вечір знаходив своє місце між рефренами та дистанцією від реального світу.
+            </p>
+            <p>
+              Спершу нас було троє — ентузіасти, які вірили, що живий рок здатний змінити щось у
+              нашому місті. Ми грали у клубах, підвалах, на вулицях — скрізь, де нас готові були
+              слухати.
+            </p>
+            <p>
+              Наш девіз — це перш за все концерт, від живих інструментів з відкритим серцем, і
+              сьогодні ми продовжуємо ділитися людьми, з питаннями і знаходити відповіді в музиці.
+              Наш кожен новий альбом стає більш особистим і відвертим.
+            </p>
+            <p>
+              Сьогодні наша музика — це понад 100 живих концертів у різних містах та сповідь людей,
+              що зберігають особисті історії та знаходять підтримку в наших піснях. Максим завжди
+              повторює: «У Грим є одна річ, яку ніколи не можна замовити — щирість».
+            </p>
+          </div>
+          <img
+            class="history-img"
+            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&auto=format&fit=crop&q=60"
+            alt="Гурт на сцені"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Зв'яжись з нами</h2>
+        <p class="contact-subtitle">Хочеш замовити виступ або маєш питання? Пиши!</p>
+        <div class="contact-inner">
+          <div class="contact-form">
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group" id="fg-name">
+                  <label for="inp-name">Ім'я</label>
+                  <input
+                    type="text"
+                    id="inp-name"
+                    name="name"
+                    placeholder="Твоє ім'я"
+                    autocomplete="name"
+                  />
+                  <div class="field-error">Будь ласка, введіть ваше ім'я</div>
+                </div>
+                <div class="form-group" id="fg-email">
+                  <label for="inp-email">Email</label>
+                  <input
+                    type="email"
+                    id="inp-email"
+                    name="email"
+                    placeholder="your@email.com"
+                    autocomplete="email"
+                  />
+                  <div class="field-error">Введіть коректний email</div>
+                </div>
+              </div>
+              <div class="form-group" id="fg-message">
+                <label for="inp-message">Повідомлення або ваші побажання...</label>
+                <textarea id="inp-message" name="message" placeholder="Напишіть тут..."></textarea>
+                <div class="field-error">Будь ласка, введіть повідомлення</div>
+              </div>
+              <button type="submit" class="btn btn-primary">Відправити</button>
+              <div class="success-msg" id="successMsg">
+                ✓ Дякуємо! Ми отримали ваше повідомлення і незабаром зв'яжемося.
+              </div>
+            </form>
+          </div>
+          <div>
+            <div class="map-placeholder">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81355.89545095594!2d30.5439742300558!3d50.41554533457276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x764931d2170146fe!2z0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1771962908002!5m2!1sru!2sua"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="map-info">
+              <div>Київ, Україна</div>
+              <div>booking@grym.ua</div>
+              <div>+38 (050) 123-45-67</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>© 2025 «Грим та Грім». Всі права захищено.</div>
+      <div class="footer-contacts">
+      <a href="mailto:booking@grym.ua">booking@grym.ua</a>
+      <a href="tel:+380501234567">+38 (050) 123-45-67</a>
+      </div>
+      <div class="footer-socials">
+    <button type="button" class="footer-icon" onclick="openPopup('instagram')" aria-label="Instagram">
+      <svg><use href="./img/svg/InlineSprite.svg#instagram"></use></svg>
+    </button>
+    <button type="button" class="footer-icon" onclick="openPopup('youtube')" aria-label="YouTube">
+      <svg><use href="./img/svg/InlineSprite.svg#youtube"></use></svg>
+    </button>
+    <button type="button" class="footer-icon" onclick="openPopup('facebook')" aria-label="Facebook">
+      <svg><use href="./img/svg/InlineSprite.svg#facebook"></use></svg>
+    </button>
+  </div>
+
+    </footer>
+
+    <!-- POPUPS -->
+    <!-- Generic popup -->
+    <div class="popup-overlay" id="mainPopup" onclick="closePopupOnBg(event)">
+      <div class="popup-box">
+        <button class="popup-close" onclick="closePopup('mainPopup')">×</button>
+        <div class="popup-title" id="popupTitle"></div>
+        <div class="popup-body" id="popupBody"></div>
+      </div>
+    </div>
+
+    <!-- Image popup -->
+    <div
+      class="popup-overlay"
+      id="imgPopup"
+      onclick="closePopupOnBg(event)"
+      style="background: rgba(0, 0, 0, 0.92)"
+    >
+      <div
+        class="popup-box"
+        style="background: transparent; border: none; padding: 0; max-width: 90vw"
+      >
+        <button
+          class="popup-close"
+          onclick="closePopup('imgPopup')"
+          style="position: fixed; top: 16px; right: 16px; font-size: 2rem; color: #fff"
+        >
+          ×
+        </button>
+        <img
+          id="imgPopupImg"
+          src=""
+          alt=""
+          style="max-width: 100%; max-height: 90vh; display: block; object-fit: contain"
+        />
+      </div>
+    </div>
+
+    <!-- Ticket popup -->
+    <div class="popup-overlay" id="ticketPopup" onclick="closePopupOnBg(event)">
+      <div class="popup-box">
+        <button class="popup-close" onclick="closePopup('ticketPopup')">×</button>
+        <div class="popup-title">Замовити квиток</div>
+        <div class="popup-body">
+          <p><strong id="ticketVenue"></strong></p>
+          <p id="ticketDate"></p>
+          <form id="ticketForm" novalidate style="margin-top: 18px">
+            <div class="form-group" id="tfg-name">
+              <label>Ім'я</label>
+              <input type="text" id="t-name" name="name" class="form-input" placeholder="Ваше ім'я" />
+              <div class="field-error">Введіть ваше ім'я</div>
+            </div>
+            <div class="form-group" id="tfg-email">
+              <label>Email</label>
+              <input type="email" id="t-email" class="form-input" email" placeholder="your@email.com" />
+              <div class="field-error">Введіть коректний email</div>
+            </div>
+            <div class="form-group">
+              <label>К-сть квитків</label>
+              <input
+                type="number"
+                id="t-qty"
+                name="qty"
+                min="1"
+                max="10"
+                value="1"
+                style="width: 80px"
+                
+              />
+            </div>
+            <button type="submit" class="btn btn-secondary" style="margin-top: 8px; margin-right: auto;margin-left: auto;">
+              Підтвердити
+            </button>
+            <div class="success-msg" id="ticketSuccessMsg">
+              ✓ Квиток замовлено! Деталі надіслано на email.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      import { toggleMenu, closeMenu, scrollToSection } from './js/nav.js';
+      import { openPopup, openTicketPopup, openImgPopup } from './js/popup.js';
+      import './js/teamCards.js';
+      import './js/forms.js'; // підключає форми
+    </script>
+  </body>
+</html>

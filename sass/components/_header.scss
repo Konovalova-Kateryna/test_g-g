@@ -1,0 +1,99 @@
+@use "../utils/vars";
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid vars.$border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 56px;
+}
+
+.nav-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: vars.$accent2;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;  
+  display: none;
+  
+  &.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0; right: 0;
+    background: rgba(10,10,10,0.98);
+    border-bottom: 1px solid vars.$border;
+    padding: 16px 5%;
+    gap: 16px;
+  }
+  
+  @media screen and (min-width: 700px) {
+    display: flex; 
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 28px;
+  }
+}
+
+.nav-links a {
+  color: vars.$text-muted;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  transition: color .2s;
+
+  &:hover,
+  &:focus-visible {
+    color: vars.$accent2;
+    outline: none;
+  }
+}
+
+.burger {
+  display: flex; 
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  color: #fff;
+  fill: #fff;
+  transition: color .2s;
+
+  &:hover,
+  &:focus-visible {
+    color: vars.$accent2;
+    fill: vars.$accent2;
+    outline: none;
+  }
+  
+  @media screen and (min-width: 700px) {
+    display: none;
+  }
+}
+
+.icon-burger { display: inline; }
+.icon-close  { display: none; }
+
+.burger.open {
+  .icon-burger { display: none; }
+  .icon-close  { display: inline; }
+}

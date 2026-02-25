@@ -1,0 +1,9 @@
+@use "../utils/vars";
+
+body {
+  font-family: 'Open Sans', sans-serif;
+    background: vars.$bg;
+    color: vars.$text;
+    font-size: 15px;
+    line-height: 1.6;
+}

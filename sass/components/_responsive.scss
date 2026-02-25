@@ -1,0 +1,37 @@
+ @use "../utils/vars";
+ 
+ @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 56px; left: 0; right: 0;
+      background: rgba(10,10,10,.98);
+      flex-direction: column;
+      padding: 20px 5%;
+      gap: 16px;
+      border-bottom: 1px solid vars.$border;
+    }
+    .nav-links.open { display: flex; }
+    .burger { display: flex; }
+    .history-inner { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    section { padding: 50px 4%; }
+    .hero-content h1 { font-size: 1.8rem; }
+  }
+
+  /* success state */
+  .success-msg {
+    background: rgba(50,200,100,.15);
+    border: 1px solid rgba(50,200,100,.4);
+    color: #7dff9e;
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    margin-top: 16px;
+    display: none;
+  }
+  .success-msg.show { display: block; }

@@ -1,0 +1,49 @@
+@use "../utils/vars";
+
+.form-group {
+     margin-bottom: 16px; 
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+    
+    }
+
+//   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: vars.$text-muted;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  } 
+
+    .form-input{
+      display: flex;
+        background: vars.$bg2;
+      border: 1px solid vars.$border;
+      color: vars.$text;
+      padding: 10px 14px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: vars.$accent2; }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .field-error {
+    color: vars.$accent;
+    font-size: 0.78rem;
+    margin-top: 4px;
+    display: none;
+  }
+
+  .form-group.has-error input,
+  .form-group.has-error textarea { border-color: vars.$accent; }
+
+  .form-group.has-error .field-error { display: block; }

@@ -1,0 +1,54 @@
+ @use "../utils/vars";
+ 
+ #members { background: vars.$bg; }
+
+  .members-grid {
+    display: grid;    
+    gap: 24px;    
+    margin: 0 auto;
+      grid-template-columns: 1fr;
+
+    @media screen and (min-width:401px) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;      
+    }
+    @media screen and (min-width:701px) {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1100px;
+      
+    }
+  }
+
+  .member-card {
+    background: vars.$bg2;
+    border: 1px solid vars.$border;
+    overflow: hidden;
+    transition: transform .2s, border-color .2s;
+    cursor: pointer;
+  }
+
+  .member-card:hover { transform: translateY(-4px); border-color: vars.$accent; }
+
+  .member-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    background: #333;
+  }
+
+  .member-info {
+    padding: 14px 16px;
+  }
+
+  .member-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .member-role {
+    font-size: 0.8rem;
+    color: vars.$text-muted;
+    margin-top: 2px;
+  }
