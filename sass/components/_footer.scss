@@ -66,8 +66,8 @@ footer {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
-    display: block;      // прибирає inline baseline-gap
-    overflow: visible;   // деякі viewBox виходять за межі — не обрізає
+    display: block;      
+    overflow: visible;  
   }
 }
 

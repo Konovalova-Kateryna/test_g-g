@@ -44,7 +44,7 @@ a {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   background: #111;
   color: #f0f0f0;
   font-size: 15px;
@@ -161,17 +161,21 @@ nav {
 }
 
 .nav-links a {
-  color: #999;
+  color: #aaa;
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial Narrow" sans-serif;
   transition: color 0.2s;
 }
 .nav-links a:hover, .nav-links a:focus-visible {
   color: #ffd700;
   outline: none;
+}
+.nav-links a.active {
+  color: #ffd700;
+  border-bottom: 1px solid #ffd700;
 }
 
 .burger {
@@ -224,7 +228,10 @@ nav {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url("https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1400&auto=format&fit=crop&q=60") center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   filter: brightness(0.3);
   z-index: 0;
 }
@@ -315,7 +322,7 @@ thead tr {
 th {
   padding: 6px 8px;
   text-align: left;
-  color: #999;
+  color: #aaa;
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
@@ -440,7 +447,7 @@ tbody tr:hover {
 
 .contact-subtitle {
   text-align: center;
-  color: #999;
+  color: #aaa;
   margin-bottom: 20px;
   font-size: 0.9rem;
 }
@@ -477,7 +484,7 @@ tbody tr:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #999;
+  color: #aaa;
   font-size: 0.85rem;
   overflow: hidden;
 }
@@ -494,7 +501,7 @@ tbody tr:hover {
   margin-left: auto;
   margin-right: auto;
   font-size: 0.82rem;
-  color: #999;
+  color: #aaa;
   line-height: 1.8;
 }
 
@@ -612,8 +619,25 @@ section {
 
 .member-role {
   font-size: 0.8rem;
-  color: #999;
+  color: #aaa;
   margin-top: 2px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.member-card:nth-child(2), .gallery-item:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.member-card:nth-child(3), .gallery-item:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
 .popup-overlay {
@@ -665,7 +689,7 @@ section {
   right: 18px;
   background: none;
   border: none;
-  color: #999;
+  color: #aaa;
   font-size: 1.4rem;
   cursor: pointer;
   line-height: 1;
@@ -700,7 +724,7 @@ section {
 }
 
 .popup-link {
-  color: #999;
+  color: #aaa;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -719,7 +743,7 @@ section {
 .form-group label {
   display: block;
   font-size: 0.8rem;
-  color: #999;
+  color: #aaa;
   margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -771,7 +795,7 @@ footer {
   flex-wrap: wrap;
   gap: 12px;
   font-size: 0.8rem;
-  color: #999;
+  color: #aaa;
   flex-direction: column;
   align-items: center;
 }
@@ -812,7 +836,7 @@ footer {
   padding: 0;
   line-height: 0;
   cursor: pointer;
-  color: #999;
+  color: #aaa;
   transition: color 0.2s, border-color 0.2s, background-color 0.2s;
 }
 .footer-icon:hover, .footer-icon:focus {
@@ -836,9 +860,44 @@ footer {
 }
 
 .footer-contacts a {
-  color: #999;
+  color: #aaa;
   transition: all 0.2s;
 }
 .footer-contacts a:hover, .footer-contacts a:focus {
   color: #ffd700;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-top.show {
+  opacity: 0.7;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.scroll-top svg {
+  fill: currentColor;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: block;
+  overflow: visible;
 }/*# sourceMappingURL=main.css.map */

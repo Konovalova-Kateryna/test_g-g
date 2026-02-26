@@ -1,0 +1,39 @@
+ @use "../utils/vars";
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: vars.$accent;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .3s, transform .3s;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.show {
+    opacity: 0.7;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+   svg {
+    fill: currentColor;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: block;      
+    overflow: visible;  
+  }
+}
