@@ -25,13 +25,6 @@
 
 ---
 
-
-
-Сайт буде доступний за адресою:
-```
-[https://konovalova-kateryna.github.io/test_g-g](https://konovalova-kateryna.github.io/test_g-g)
-
-```
 ## Lighthouse результати
 
 Тестувалось на задеплоєній версії в режимі інкогніто (без розширень Chrome):
